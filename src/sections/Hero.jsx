@@ -65,7 +65,7 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting1 <span className="text-primary glow-text">digital</span>
+                Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
                 <br />
@@ -87,7 +87,7 @@ export const Hero = () => {
               </Button>
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
-                <a href="public/rahul-cv.pdf" download>Download CV</a>
+                <a href="public\rahul-cv.pdf" download>Download CV</a>
               </AnimatedBorderButton>
             </div>
 
