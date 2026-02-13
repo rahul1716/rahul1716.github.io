@@ -76,11 +76,11 @@ export const Contact = () => {
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      console.error("EmailJS error:", error);
+      console.error("EmailJS error:", err);
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again later.",
+          err?.text || "Failed to send message. Please try again later.",
       });
     } finally {
       setIsLoading(false);
@@ -113,7 +113,7 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6" onSubmit={handleSubmit} action="sk_ZjQ5YzBlYjQtNDIzZi00MDAwLTg3YTAtYWQ4NTU4NTE5N2M0" method="POST">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -122,7 +122,7 @@ export const Contact = () => {
                   Name
                 </label>
                 <input
-                name="name"
+                  name="name"
                   id="name"
                   type="text"
                   required
@@ -137,14 +137,15 @@ export const Contact = () => {
 
               <div>
                 <label
+
                 
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  type="email"
                   name="email"
                   required
                   placeholder="your@email.com"
@@ -195,11 +196,10 @@ export const Contact = () => {
               {submitStatus.type && (
                 <div
                   className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                     p-4 rounded-xl ${submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                    }`}
                 >
                   {submitStatus.type === "success" ? (
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
