@@ -20,14 +20,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "9873771894",
-    href: "tel:+919873771894",
+    value: "9873778194",
+    href: "tel:+919873778194",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
-    href: "#",
+    value: "Faridabad, Haryana, India",
+    href: "https://maps.app.goo.gl/mG13L7jpwvDeZKUp8",
   },
 ];
 
