@@ -36,14 +36,14 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
+              animation: `slow-drift ${15 + Math.random() * 20
+                }s ease-in-out infinite`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
@@ -82,8 +82,11 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-               <a href="tel:9873778194"> Contact Me </a><ArrowRight className="w-5 h-5" />
+              <Button size="lg" asChild>
+                <a href="tel:9873778194">
+                  Contact Me
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </Button>
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
@@ -96,7 +99,7 @@ export const Hero = () => {
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
                 { icon: Github, href: "https://github.com/rahul1716" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/rahul-verma-183303348?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/rahul-verma-183303348" },
                 { icon: Twitter, href: "https://x.com/RAHULVE16747551" },
               ].map((social, idx) => (
                 <a
@@ -110,7 +113,7 @@ export const Hero = () => {
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
               <div
@@ -137,7 +140,7 @@ export const Hero = () => {
                 </div>
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
                   </div>
